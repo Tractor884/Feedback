@@ -21,7 +21,7 @@ bot = Bot(token=TELEGRAM_TOKEN)
 dp = Dispatcher(bot)
 
 headers = {
-    'Authorization': f'Bearer {oC3uZ4tC4pZVx1pEEATiU2i8HcpypMH7}',
+    'Authorization': 'Bearer oC3uZ4tC4pZVx1pEEATiU2i8HcpypMH7',
     'Content-Type': 'application/json'
 }
 
