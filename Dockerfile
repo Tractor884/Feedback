@@ -10,7 +10,7 @@ COPY . .
 
 # Обновляем pip, setuptools, wheel и устанавливаем зависимости
 RUN pip install --upgrade pip setuptools wheel
-RUN pip install -r requirements.txt
+RUN pip install -r Requirements.txt
 
 # Команда запуска бота
 CMD ["python", "bot.py"]
