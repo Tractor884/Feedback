@@ -8,10 +8,10 @@ TELEGRAM_TOKEN = '7512925671:AAGSdU-jPhRgV0UenGXHTWfU4RL-77GDlnk'
 
 # API ключ Mistral и ID вашего агента
 MISTRAL_API_KEY = 'oC3uZ4tC4pZVx1pEEATiU2i8HcpypMH7'
-MISTRAL_AGENT_ID = 'ag:5de31c2e:20251005:trenazher-obratnaia-sviaz:5de462a9'
+MISTRAL_AGENT_ID = '5de31c2e:20251005:trenazher-obratnaia-sviaz:5de462a9'
 
 # URL endpoint агента Mistral
-MISTRAL_URL = f'https://api.mistral.ai/v1/agents/{ag:5de31c2e:20251005:trenazher-obratnaia-sviaz:5de462a9}/completions'
+MISTRAL_URL = MISTRAL_URL = "https://api.mistral.ai/v1/agents/5de31c2e:20251005:trenazher-obratnaia-sviaz:5de462a9/completions"
 
 # Настройка логирования
 logging.basicConfig(level=logging.INFO)
