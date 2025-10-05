@@ -11,7 +11,7 @@ MISTRAL_API_KEY = 'oC3uZ4tC4pZVx1pEEATiU2i8HcpypMH7'
 MISTRAL_AGENT_ID = '5de31c2e:20251005:trenazher-obratnaia-sviaz:5de462a9'
 
 # URL endpoint агента Mistral
-MISTRAL_URL = MISTRAL_URL = "https://api.mistral.ai/v1/agents/5de31c2e:20251005:trenazher-obratnaia-sviaz:5de462a9/completions"
+MISTRAL_URL = https://api.mistral.ai/v1/agents/5de31c2e:20251005:trenazher-obratnaia-sviaz:5de462a9/completions
 
 # Настройка логирования
 logging.basicConfig(level=logging.INFO)
