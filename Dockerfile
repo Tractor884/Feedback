@@ -13,4 +13,4 @@ RUN pip install --upgrade pip setuptools wheel
 RUN pip install -r Requirements.txt
 
 # Команда запуска бота
-CMD ["python", "bot.py"]
+CMD ["python", "Feedback Bot"]
