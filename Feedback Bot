@@ -1,0 +1,49 @@
+import logging
+import requests
+from aiogram import Bot, Dispatcher, types
+from aiogram.utils import executor
+
+# Токен Telegram бота
+TELEGRAM_TOKEN = '7512925671:AAGSdU-jPhRgV0UenGXHTWfU4RL-77GDlnk'
+
+# API ключ Mistral и ID вашего агента
+MISTRAL_API_KEY = 'oC3uZ4tC4pZVx1pEEATiU2i8HcpypMH7'
+MISTRAL_AGENT_ID = 'ag:5de31c2e:20251005:trenazher-obratnaia-sviaz:5de462a9'
+
+# URL endpoint агента Mistral
+MISTRAL_URL = f'https://api.mistral.ai/v1/agents/{ag:5de31c2e:20251005:trenazher-obratnaia-sviaz:5de462a9}/completions'
+
+# Настройка логирования
+logging.basicConfig(level=logging.INFO)
+
+bot = Bot(token=TELEGRAM_TOKEN)
+dp = Dispatcher(bot)
+
+headers = {
+    'Authorization': f'Bearer {oC3uZ4tC4pZVx1pEEATiU2i8HcpypMH7}',
+    'Content-Type': 'application/json'
+}
+
+@dp.message_handler()
+async def handle_message(message: types.Message):
+    user_text = message.text
+    data = {
+        "messages": [
+            {"role": "user", "content": user_text}
+        ]
+    }
+
+    try:
+        response = requests.post(MISTRAL_URL, headers=headers, json=data)
+        response.raise_for_status()
+        result = response.json()
+        # Получаем ответ агента
+        reply = result['choices'][0]['message']['content']
+    except Exception as e:
+        logging.error(f'Ошибка при запросе к Mistral API: {e}')
+        reply = "Извините, произошла ошибка при обработке вашего запроса."
+
+    await message.answer(reply)
+
+if __name__ == '__main__':
+    executor.start_polling(dp, skip_updates=True)
