@@ -5,7 +5,7 @@ FROM python:3.11-slim
 WORKDIR /app
 
 # Копируем файл зависимостей и исходный код
-COPY requirements.txt .
+COPY Requirements.txt .
 COPY . .
 
 # Обновляем pip, setuptools, wheel и устанавливаем зависимости
